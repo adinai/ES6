@@ -66,4 +66,31 @@ function is setTimeout.*/
 
 setTimeout(callback, 1000)
 
-/* Let's see 
+/* Let's see how setTimout works if you give Js anpther task to complete */
+
+const tenSecondsLater = _ => console.log('10 seconds passed!')
+setTimeout(tenSecondsLater, 10000)
+console.log('Start!')
+
+const orderPizza = flavour => {
+    callPizzaShop('I want s ${flavour} pizza')
+    waits20minsForPizzaToCome()
+    bringPizzaToYou()
+}
+
+orderPizza('Hawaiian')
+
+//These operations only starts after orderPizza is completed
+mopfloor()
+ironClothes()
+
+//Callbacks in event listeners
+document.addEventListener( button, highlightTheButton)
+document.removeEventListener(button, highlightTheButton)
+
+//Callbacks in jQuery`s ajax method
+$.ajax('some-url', {
+    success (data) { // success callback },
+        error (err) { // error callback}
+    }
+})
